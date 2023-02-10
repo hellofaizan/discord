@@ -2,6 +2,7 @@ import React from 'react'
 import { Inter } from '@next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,12 +11,17 @@ export const getStaticProps = async () => {
   const data = await res.json()
 
   return {
-    props: { data },  
+    props: { data },
+    revalidate: 5
   }
 }
 
 const Home = ({data}) => {  
+  const router = useRouter()
   console.log(data)
+  if (router.isFallback) {
+    return <div className='flex flex-col items-center justify-center h-screen w-screen py-2'>Loading...</div>
+  }
   const image = "https://cdn.discordapp.com/avatars/"+data.data.discord_user.id+"/"+data.data.discord_user.avatar
   
   return (
