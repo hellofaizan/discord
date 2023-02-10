@@ -32,7 +32,9 @@ const Home = ({data}) => {
 
           <div className="flex flex-row items-center justify-center bg-gray-700 rounded-lg mb-10 px-4 py-3">
             <h1 className="font-bold text-white">Listening:</h1>
-            <h1 className=" text-white ml-1">{data.data.listening_to_spotify ? data.data.spotify.song : "Nothing right now."}</h1>
+            <h1 className=" text-white ml-1">{data && data.data.listening_to_spotify ? (
+              `${data.data.spotify.song} by ${data.data.spotify.artist}`
+              ) : "Nothing right now."}</h1>
             </div>
             </div>
       </div>
