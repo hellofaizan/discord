@@ -33,7 +33,8 @@ const Home = ({ data }) => {
     const sendMessage = async () => {
       if (email.current == "" || message.current == "") return setErrMsg("Please fill out all fields!");
       const response = new XMLHttpRequest();
-      response.open("POST", process.env.WEBHOOK_URL, true);
+      const url = process.env.WEBHOOK_URL;
+      response.open("POST", url);
       response.setRequestHeader('Content-type', 'application/json');
       setSending(true);
 
