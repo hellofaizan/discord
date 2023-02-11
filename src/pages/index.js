@@ -83,7 +83,8 @@ const Home = ({ data }) => {
     <Head>
         <meta charSet="utf-8" />
         <title>HelloFaizan - Software Enthusiast</title>
-        <link rel="shortcut icon" href="/faizan.png" />
+        {/* favicon */}
+        <link rel="icon" href="/ffavicon.ico" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="theme-color" content="#171717" />
         <meta
