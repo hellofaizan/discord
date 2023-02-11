@@ -1,13 +1,9 @@
 import React from 'react'
-import axios from "axios";
 import { useRef, useState } from "react";
 import { Inter } from '@next/font/google'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import TimeStatus from './timestatus'
-
-import { RiSendPlane2Fill } from "react-icons/ri";
-import { ImSpinner2 } from "react-icons/im";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -41,10 +37,13 @@ const Home = ({ data }) => {
       response.setRequestHeader('Content-type', 'application/json');
       setSending(true);
 
+      const timestamp = new Date();
+
       const msgEmbed = {
         title: `Message by `+ email.current,
         description: message.current,
         color: hexToDecimal("#ff2bf1"),
+        timestamp: timestamp.toISOString(),
       }
 
       const params = {
@@ -56,7 +55,7 @@ const Home = ({ data }) => {
 
       setSending(false);
 
-      if (response.status == 200) {
+      if (response == "OK") {
         setErrMsg("Thanks for reaching out to us!")
       } else {
         setErrMsg("Something went wrong, please try again later!")
