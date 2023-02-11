@@ -42,7 +42,7 @@ const Home = ({ data }) => {
       const msgEmbed = {
         title: `Message by `+ email.current,
         description: message.current,
-        color: hexToDecimal("#ff2bf1"),
+        color: hexToDecimal("#FFE900"),
         timestamp: timestamp.toISOString(),
       }
 
