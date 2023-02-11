@@ -30,12 +30,10 @@ const Home = ({ data }) => {
     const [sending, setSending] = useState(false);
     const [errMsg, setErrMsg] = useState("");
 
-    const urlLast = "xqWlDnc_GG55BNeqLlUr1az1ZP9h5k2EvN6Yatu-aSdmFYfMQGDl6_lFjVv3u7RR8Pnv"
-
     const sendMessage = async () => {
       if (email.current == "" || message.current == "") return setErrMsg("Please fill out all fields!");
       const response = new XMLHttpRequest();
-      response.open("POST", `https://discord.com/api/webhooks/1073966225274712224/${urlLast}`);
+      response.open("POST", process.env.NEXT_PUBLIC_WEBHOOK_URL);
       response.setRequestHeader('Content-type', 'application/json');
       setSending(true);
 
@@ -57,12 +55,13 @@ const Home = ({ data }) => {
 
       setSending(false);
 
-      if (response.status == 204) {
-        setErrMsg("Message sent!");
+      // If response ok then clear fields
+      if (response.status == "200") {
         email.current = "";
         message.current = "";
+        setErrMsg("Message sent!");
       } else {
-        setErrMsg("Message failed to send!");
+        setErrMsg("Something went wrong!");
       }
 
       function hexToDecimal(hex) {
