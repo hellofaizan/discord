@@ -33,7 +33,7 @@ const Home = ({ data }) => {
     const sendMessage = async () => {
       if (email.current == "" || message.current == "") return setErrMsg("Please fill out all fields!");
       const response = new XMLHttpRequest();
-      response.open("POST", process.env.WEEBHOOK_URL, true);
+      response.open("POST", "https://discord.com/api/webhooks/1073926474387701792/4KxGXSjYXcu3yZEhhMivFfYwOp_PprAmLSUAyfWYOi-UoD__SvsD5XRPi53ufo_s9xs_");
       response.setRequestHeader('Content-type', 'application/json');
       setSending(true);
 
