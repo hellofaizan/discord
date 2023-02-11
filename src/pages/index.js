@@ -33,6 +33,7 @@ const Home = ({ data }) => {
     const sendMessage = async () => {
       if (email.current == "" || message.current == "") return setErrMsg("Please fill out all fields!");
       const response = new XMLHttpRequest();
+
       response.open("POST", process.env.NEXT_PUBLIC_WEBHOOK_URL);
       response.setRequestHeader('Content-type', 'application/json');
       setSending(true);
@@ -56,7 +57,7 @@ const Home = ({ data }) => {
       setSending(false);
 
       // If response ok then clear fields
-      if (response.status == "200") {
+      if (response.status == 200) {
         email.current = "";
         message.current = "";
         setErrMsg("Message sent!");
@@ -140,7 +141,7 @@ const Home = ({ data }) => {
             className="absolute inset-x-0 bottom-0 h-1.5 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
           ></span>
 
-          <htmlForm action="" className=" space-y-4">
+          <form action="" className=" space-y-4">
             <p className="text-2xl mt-2 mb-0 font-medium">Let&apos;s chat 💬</p>
             <TimeStatus />
 
@@ -175,7 +176,6 @@ const Home = ({ data }) => {
             </div>
 
             <button
-              type="submit"
               onClick={sendMessage}
               className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
             >
@@ -189,7 +189,7 @@ const Home = ({ data }) => {
             <p className="text-center text-sm text-gray-500">
               {errMsg}
             </p>
-          </htmlForm>
+          </form>
         </div>
 
       </div>
