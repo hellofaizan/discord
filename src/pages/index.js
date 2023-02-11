@@ -57,10 +57,12 @@ const Home = ({ data }) => {
 
       setSending(false);
 
-      if (response == "OK") {
-        setErrMsg("Thanks for reaching out to us!")
+      if (response.status == 204) {
+        setErrMsg("Message sent!");
+        email.current = "";
+        message.current = "";
       } else {
-        setErrMsg("Something went wrong, please try again later!")
+        setErrMsg("Message failed to send!");
       }
 
       function hexToDecimal(hex) {
