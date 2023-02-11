@@ -66,11 +66,11 @@ const Home = ({ data, data2 }) => {
                   {data && data.data.activities[0] && data.data.activities[0].state} - <span>
                     {/* If else */}
                     {data && data.data.activities[0] && data.data.discord_status == "dnd" ? (
-                      <span className='text-red-600 font-bold'>{data && data.data.activities[0] && data.data.discord_status}</span>
+                      <span className='text-red-600 font-bold'>{data && data.data.activities[0] && data.data.discord_status} <i class="bi bi-dot font-bold"></i></span>
                     ) : data && data.data.activities[0] && data.data.discord_status == "online" ? (
-                      <span className='text-green-500 font-bold'>{data && data.data.activities[0] && data.data.discord_status}</span>
+                      <span className='text-green-500 font-bold'>{data && data.data.activities[0] && data.data.discord_status} <i class="bi bi-dot font-bold"></i></span>
                     ) : data && data.data.activities[0] && data.data.discord_status == "idle" ? (
-                      <span className='text-yellow-500 font-bold'>{data && data.data.activities[0] && data.data.discord_status}</span>
+                      <span className='text-yellow-500 font-bold'>{data && data.data.activities[0] && data.data.discord_status} <i class="bi bi-dot font-bold"></i></span>
                     ) : (
                       <span className='text-gray-500'>No Status - Offline</span>
                     )
