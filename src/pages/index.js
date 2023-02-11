@@ -53,17 +53,18 @@ const Home = ({ data }) => {
         embeds: [msgEmbed]
       }
       response.send(JSON.stringify(params));
-
-      setSending(false);
-
-      // If response ok then clear fields
-      if (response.status == 200) {
-        email.current = "";
-        message.current = "";
-        setErrMsg("Message sent!");
-      } else {
-        setErrMsg("Something went wrong!");
+      response.onload = () => {
+        if (response.status >= 200 && response.status < 400) {
+          setSending(false);
+          setErrMsg("Message sent successfully!");
+        } else {
+          setSending(false);
+          setErrMsg("Something went wrong!");
+        }
       }
+
+
+    
 
       function hexToDecimal(hex) {
         return parseInt(hex.replace("#",""), 16)
@@ -141,7 +142,7 @@ const Home = ({ data }) => {
             className="absolute inset-x-0 bottom-0 h-1.5 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
           ></span>
 
-          <form action="" className=" space-y-4">
+          <form className=" space-y-4">
             <p className="text-2xl mt-2 mb-0 font-medium">Let&apos;s chat 💬</p>
             <TimeStatus />
 
@@ -181,7 +182,7 @@ const Home = ({ data }) => {
             >
               <span>
               Send Message
-                    {sending && <i className="bi bi-arrow-clockwise ml-2 animate-spin"></i>}
+                    {sending && <i class="bi bi-stop-circle animate-spin ml-2"></i>}
                     {!sending && <i className="bi bi-chat-left ml-2"></i>}
               </span>
             </button>
