@@ -57,7 +57,7 @@ const Home = ({ data, data2 }) => {
 
           <div className="justify-between flex">
             <div>
-              <h3 className="text-base font-bold dark:text-gray-300 text-gray-900">
+              <h3 className="text-lg font-bold dark:text-gray-300 text-gray-900">
                 {data && data.data.discord_user.username}#{data && data.data.discord_user.discriminator}
               </h3>
               <div className="flex flex-col">
@@ -72,7 +72,7 @@ const Home = ({ data, data2 }) => {
                     ) : data && data.data.activities[0] && data.data.discord_status == "idle" ? (
                       <span className='text-yellow-500 font-bold'>{data && data.data.activities[0] && data.data.discord_status} <i class="bi bi-dot font-bold"></i></span>
                     ) : (
-                      <span className='text-gray-500'>No Status - Offline</span>
+                      <span className='text-gray-500'>No Status - Offline <i class="bi bi-dot"></i></span>
                     )
                     }
                   </span>
