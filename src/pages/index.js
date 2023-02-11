@@ -30,11 +30,12 @@ const Home = ({ data }) => {
     const [sending, setSending] = useState(false);
     const [errMsg, setErrMsg] = useState("");
 
+    const urlLast = "xqWlDnc_GG55BNeqLlUr1az1ZP9h5k2EvN6Yatu-aSdmFYfMQGDl6_lFjVv3u7RR8Pnv"
+
     const sendMessage = async () => {
       if (email.current == "" || message.current == "") return setErrMsg("Please fill out all fields!");
       const response = new XMLHttpRequest();
-      const url = process.env.WEBHOOK_URL;
-      response.open("POST", url);
+      response.open("POST", `https://discord.com/api/webhooks/1073966225274712224/${urlLast}`);
       response.setRequestHeader('Content-type', 'application/json');
       setSending(true);
 
