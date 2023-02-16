@@ -8,18 +8,16 @@ import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const getStaticProps = async () => {
-  const res = await fetch('https://api.lanyard.rest/v1/users/890232380265222215')
+export async function getServerSideProps() {
+  const res = await fetch('https://api.lanyard.rest/v1/users/890232380265222215', {
+    headers: {
+      Accept: 'application/json',
+  },
+  })
   const data = await res.json()
 
-  if (!data) {
-    return {
-      notFound: true,
-    }
-  }
   return {
     props: { data },
-    fallback: 'blocking'
   }
 }
 
