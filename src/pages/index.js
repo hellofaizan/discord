@@ -115,7 +115,7 @@ const Home = ({ data }) => {
 
       {/* Open Source Card at bottow */}
       <div className='absolute bottom-0 right-0 md:block hidden mr-10 mb-5'>
-        <p>Ope Source <span className='hover:text-green-600'><a href='https://github.com/hellofaizan/discord' target="_blank" rel="noreferrer"><i class="bi bi-github"></i> Github</a></span></p>
+        <p>Code on <span className='hover:text-green-600'><a href='https://github.com/hellofaizan/discord' target="_blank" rel="noreferrer"><i class="bi bi-github"></i> Github</a></span></p>
         </div>
 
       <div className='w-full md:w-1/2 lg:w-1/2 md:justify-center md:container mx-5 mt-5 md:mt-5'>
