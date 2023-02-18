@@ -105,7 +105,7 @@ const Home = ({ data }) => {
       {/* Icons Card */}
       <div className='absolute bottom-0 left-0 py-2 md:block hidden ml-10 mb-5'>
         <div className='flex flex-col ml-10 mb-10 space-y-5'>
-          <a href='https://dicord.gg/invite/rraBbMQraQ' target="_blank" rel="noreferrer"><i className="bi bi-discord hover:text-blue-500"></i></a>
+          <a href='https://discord.gg/invite/rraBbMQraQ' target="_blank" rel="noreferrer"><i className="bi bi-discord hover:text-blue-500"></i></a>
           <a href='https://youtube.com/hellofaizan' target="_blank" rel="noreferrer"><i className="bi bi-youtube hover:text-red-600"></i></a>
           <a href='https://github.com/hellofaizan' target="_blank" rel="noreferrer"><i className="bi bi-github"></i></a>
           <a href='https://www.instagram.com/curiousfaizan/' target="_blank" rel="noreferrer"><i className="bi bi-instagram hover:text-[#ff2bf1]"></i></a>
