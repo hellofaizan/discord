@@ -16,16 +16,16 @@ export default function App({ Component, pageProps }) {
           name="keywords"
           content="HelloFaizan, Faizan Blog, HelloFaizan blog, CuriousFaizan, web developer, github, typescript, nextjs"
         />
-        <meta name="description" content="HelloFaizan - Send message to HelloFaizan" />
+        <meta name="description" content="HelloFaizan - Chech out all socials of Hellofaizan at one place" />
         <meta name="author" content="Hello Faizan" />
-        <meta property="og:title" content="Drop a message to HelloFaizan" />
+        <meta property="og:title" content="Own Linktree of HelloFaizan" />
         <meta
           property="og:description"
-          content="HelloFaizan is a liberal person who loves to share his knowledge with others."
+          content="This website has all links to my social media accounts and more. Have a visit."
         />
         <meta
           property="og:image"
-          content="/dc.png"
+          content="/faizan.png"
         />
         <link rel="apple-touch-icon" href="/faizan.png" />
       </Head>
