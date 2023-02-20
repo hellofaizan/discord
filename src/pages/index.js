@@ -62,9 +62,6 @@ const Home = ({ data }) => {
         }
       }
 
-
-    
-
       function hexToDecimal(hex) {
         return parseInt(hex.replace("#",""), 16)
       }
@@ -78,30 +75,6 @@ const Home = ({ data }) => {
 
   return (
     <>
-    <Head>
-        <meta charSet="utf-8" />
-        <title>HelloFaizan - Software Enthusiast</title>
-        {/* favicon */}
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <meta name="theme-color" content="#171717" />
-        <meta
-          name="keywords"
-          content="HelloFaizan, Faizan Blog, HelloFaizan blog, CuriousFaizan, web developer, github, typescript, nextjs"
-        />
-        <meta name="description" content="HelloFaizan - Send message to HelloFaizan" />
-        <meta name="author" content="Hello Faizan" />
-        <meta property="og:title" content="Drop a message to HelloFaizan" />
-        <meta
-          property="og:description"
-          content="HelloFaizan is a liberal person who loves to share his knowledge with others."
-        />
-        <meta
-          property="og:image"
-          content="/dc.png"
-        />
-        <link rel="apple-touch-icon" href="/faizan.png" />
-      </Head>
       {/* Icons Card */}
       <div className='absolute bottom-0 left-0 py-2 md:block hidden ml-10 mb-5'>
         <div className='flex flex-col ml-10 mb-10 space-y-5'>
